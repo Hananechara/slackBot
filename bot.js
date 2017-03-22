@@ -1,9 +1,5 @@
 const SlackBot = require('slackbots');
-
-
-
-const Chuck = require('chucknorris-io'),
-client = new Chuck();
+const axios = require('axios');
 
 
 module.exports = function(params) {
@@ -26,11 +22,11 @@ module.exports = function(params) {
 		}
 	}
 	
-	self.onMessage= function(event){
-			// Retrieve a random chuck joke
-			var blague=client.getRandomJoke();
-			
-			self.bot.postMessage(event.channel,blague.value);
 
-	 }
+	self.onMessage= function(event){
+			axios.get('http://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1').then(
+				function(resp){
+					self.bot.postMessage(event.channel,resp.data[0].fact);
+				});
+			}
 }
