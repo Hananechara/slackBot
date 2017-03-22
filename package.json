@@ -5,8 +5,11 @@
   "main": "quest1.js",
   "scripts": {
     "test": "mocha",
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "slackbots": "^1.0.2"
+  }
 }
