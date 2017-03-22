@@ -13,11 +13,15 @@ module.exports = function(params) {
 	}
 	self.onEvent= function(event){
 		console.log(event.type);
+		if(event.type == 'message') {	
+			if ( !event.bot_id){
+				self.onMessage(event);
+			}
+		}
 	}
 	
 	self.onMessage= function(event){
-	/*	if event.type == 'message':
-			if !event.bot_id :
-					self.bot.postMessageToUser(event.user, 'La reponse automatique!!');*/
+			self.bot.postMessage(event.channel, 'La reponse automatique!!');
+
 	 }
 }
