@@ -16,8 +16,8 @@ module.exports = function(params) {
 	}
 	
 	self.onMessage= function(event){
-		if self.bot.type == 'message':
-			if !self.bot.bot_id :
-					self.bot.postMessageToUser(self.bot.user, 'La reponse automatique!!');
+	/*	if event.type == 'message':
+			if !event.bot_id :
+					self.bot.postMessageToUser(event.user, 'La reponse automatique!!');*/
 	 }
 }
