@@ -12,7 +12,7 @@ module.exports = function(params) {
 		self.bot.on('message',self.onEvent);
 	}
 	self.onEvent= function(event){
-		console.log(event);
+		console.log(event.type);
 	}
 	
 	self.onMessage= function(event){
