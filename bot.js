@@ -1,5 +1,11 @@
 const SlackBot = require('slackbots');
 
+
+
+const Chuck = require('chucknorris-io'),
+client = new Chuck();
+
+
 module.exports = function(params) {
 	this.bot = null;
 	var self = this;
@@ -21,7 +27,10 @@ module.exports = function(params) {
 	}
 	
 	self.onMessage= function(event){
-			self.bot.postMessage(event.channel, 'La reponse automatique!!');
+			// Retrieve a random chuck joke
+			var blague=client.getRandomJoke();
+			
+			self.bot.postMessage(event.channel,blague.value);
 
 	 }
 }
