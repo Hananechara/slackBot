@@ -1,0 +1,12 @@
+{
+  "name": "tpcloud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "quest1.js",
+  "scripts": {
+    "test": "mocha",
+    "start":"node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
